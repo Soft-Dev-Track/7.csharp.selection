@@ -192,7 +192,7 @@ Requirements:
 - If an exception occurs, print a user-friendly message explaining the error.
 
 ```csharp
- try
+try
 {
     Console.WriteLine("Hello, what is your age?");
     Console.WriteLine(CanEnterInTheCasino());
@@ -215,7 +215,7 @@ public void Test_Can_Enter_In_TheCasino()
 
     Console.SetIn(input);
 
-    var result = Selection.Program.CanEnterInTheCasino();
+    var result = Selection.Solution.CanEnterInTheCasino();
 
     Assert.AreEqual("You can enter! Be welcome!", result);
 }
@@ -227,7 +227,7 @@ public void Test_Can_not_Enter_In_The_Casino()
 
     Console.SetIn(input);
 
-    var result = Selection.Program.CanEnterInTheCasino();
+    var result = Selection.Solution.CanEnterInTheCasino();
 
     Assert.AreEqual("Sorry, you can't enter! Be patient!", result);
 }
@@ -235,22 +235,15 @@ public void Test_Can_not_Enter_In_The_Casino()
 [Test]
 public void Test_Get_Validated_Age()
 {
-    int age = Selection.Program.GetValidatedAge("23");
+    int age = Selection.Solution.GetValidatedAge("23");
 
     Assert.That(age, Is.EqualTo(23));
-
-}
-
-[Test]
-public void Test_Get_Unvalidated_Age()
-{
-    Assert.Throws<FormatException>(() => Selection.Program.GetValidatedAge("120"));
 }
 
 [Test]
 public void Test_Get_Unvalidated_Age_string()
 {
-    Assert.Throws<FormatException>(() => Selection.Program.GetValidatedAge("ez"));
+    Assert.Throws<FormatException>(() => Selection.Solution.GetValidatedAge("Bonjour"));
 }
 ```
 
@@ -262,19 +255,19 @@ Write a program that asks the user to enter a number and checks whether the numb
 [Test]
 public void SignOfNumber_Positive()
 {
-    Assert.That(Selection.Program.SignOfNumber(20), Is.EqualTo("The number is positive."));
+    Assert.That(Selection.Solution.SignOfNumber(20), Is.EqualTo("The number is positive."));
 }
 
 [Test]
 public void SignOfNumber_Negative()
 {
-    Assert.That(Selection.Programs.SignOfNumber(-2), Is.EqualTo("The number is negative."));
+    Assert.That(Selection.Solution.SignOfNumber(-2), Is.EqualTo("The number is negative."));
 }
 
 [Test]
 public void SignOfNumber_Zero()
 {
-    Assert.That(Selection.Program.SignOfNumber(0), Is.EqualTo("The number is zero."));
+    Assert.That(Selection.Solution.SignOfNumber(0), Is.EqualTo("The number is zero."));
 }
 ```
 
@@ -290,19 +283,19 @@ Write a program that calculates the final price after applying multiple discount
 [Test]
 public void DiscountPriceCalculatorOption1()
 {
-    Assert.That(fundamentals.App.Conditions.DiscountPriceCalculator(1,25), Is.EqualTo(22.5));
+    Assert.That(Selection.Solution.DiscountPriceCalculator(1,25), Is.EqualTo(22.5));
 }
 
 [Test]
 public void DiscountPriceCalculatorOption2()
 {
-    Assert.That(fundamentals.App.Conditions.DiscountPriceCalculator(2,25), Is.EqualTo(23.75));
+    Assert.That(Selection.Solution.DiscountPriceCalculator(2,25), Is.EqualTo(23.75));
 }
 
 [Test]
 public void DiscountPriceCalculatorOption3()
 {
-    Assert.That(fundamentals.App.Conditions.DiscountPriceCalculator(3,25), Is.EqualTo(20));
+    Assert.That(Selection.Solution.DiscountPriceCalculator(3,25), Is.EqualTo(20));
 }
 
 [Test]
@@ -313,7 +306,7 @@ public void DiscountPriceCalculatorError()
     double price = 25;
 
     // Act & Assert
-    var ex = Assert.Throws<ArgumentException>(() => fundamentals.App.Conditions.DiscountPriceCalculator(invalidChoice, price));
+    var ex = Assert.Throws<ArgumentException>(() => Selection.Solution.DiscountPriceCalculator(invalidChoice, price));
 
     Assert.That(ex.Message, Is.EqualTo("Invalid choice. Please enter a number between 1 and 3."));
 }
@@ -329,19 +322,19 @@ Write a program that reads the length of the three sides of a triangle and deter
 [Test]
 public void TriangleClassificationEquilateral()
 {
-    Assert.That(fundamentals.App.Conditions.TriangleClassification(10,10,10), Is.EqualTo("The triangle is equilateral."));
+    Assert.That(Selection.Solution.TriangleClassification(10,10,10), Is.EqualTo("The triangle is equilateral."));
 }
 
 [Test]
 public void TriangleClassificationIsosceles()
 {
-    Assert.That(fundamentals.App.Conditions.TriangleClassification(10,5,10), Is.EqualTo("The triangle is isosceles."));
+    Assert.That(Selection.Solution.TriangleClassification(10,5,10), Is.EqualTo("The triangle is isosceles."));
 }
 
 [Test]
 public void TriangleClassificationScalene()
 {
-    Assert.That(fundamentals.App.Conditions.TriangleClassification(10,5,8), Is.EqualTo("The triangle is scalene."));
+    Assert.That(Selection.Solution.TriangleClassification(10,5,8), Is.EqualTo("The triangle is scalene."));
 }
 ```
 
@@ -351,9 +344,5 @@ Write a program that calculates an employee's weekly salary based on hours worke
 
 - The first 40 hours are paid at the standard hourly rate.
 - Overtime (beyond 40 hours) is paid at 1.5 times the standard hourly rate.
-
-## Next
-
-[8.Functions](8.functions.md)
 
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDU3bzdnNjJqY3BmMjY0dHF3eWZ2bjZ1eGdyc3gxczF0dDUxOHd3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dspoErphyYzLO/giphy.webp)
