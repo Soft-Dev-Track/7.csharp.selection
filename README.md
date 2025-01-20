@@ -345,4 +345,6 @@ Write a program that calculates an employee's weekly salary based on hours worke
 - The first 40 hours are paid at the standard hourly rate.
 - Overtime (beyond 40 hours) is paid at 1.5 times the standard hourly rate.
 
+---
+
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDU3bzdnNjJqY3BmMjY0dHF3eWZ2bjZ1eGdyc3gxczF0dDUxOHd3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dspoErphyYzLO/giphy.webp)
