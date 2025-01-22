@@ -253,19 +253,19 @@ Write a program that asks the user to enter a number and checks whether the numb
 
 ```csharp
 [Test]
-public void SignOfNumber_Positive()
+public void Test_SignOfNumber_Positive()
 {
     Assert.That(Selection.Solution.SignOfNumber(20), Is.EqualTo("The number is positive."));
 }
 
 [Test]
-public void SignOfNumber_Negative()
+public void Test_SignOfNumber_Negative()
 {
     Assert.That(Selection.Solution.SignOfNumber(-2), Is.EqualTo("The number is negative."));
 }
 
 [Test]
-public void SignOfNumber_Zero()
+public void Test_SignOfNumber_Zero()
 {
     Assert.That(Selection.Solution.SignOfNumber(0), Is.EqualTo("The number is zero."));
 }
@@ -281,25 +281,25 @@ Write a program that calculates the final price after applying multiple discount
 
 ```csharp
 [Test]
-public void DiscountPriceCalculatorOption1()
+public void Test_DiscountPriceCalculatorOption1()
 {
     Assert.That(Selection.Solution.DiscountPriceCalculator(1,25), Is.EqualTo(22.5));
 }
 
 [Test]
-public void DiscountPriceCalculatorOption2()
+public void Test_DiscountPriceCalculatorOption2()
 {
     Assert.That(Selection.Solution.DiscountPriceCalculator(2,25), Is.EqualTo(23.75));
 }
 
 [Test]
-public void DiscountPriceCalculatorOption3()
+public void Test_DiscountPriceCalculatorOption3()
 {
     Assert.That(Selection.Solution.DiscountPriceCalculator(3,25), Is.EqualTo(20));
 }
 
 [Test]
-public void DiscountPriceCalculatorError()
+public void Test_DiscountPriceCalculatorError()
 {
     // Arrange
     int invalidChoice = 4;
@@ -320,19 +320,19 @@ Write a program that reads the length of the three sides of a triangle and deter
 
 ```csharp
 [Test]
-public void TriangleClassificationEquilateral()
+public Test_void TriangleClassificationEquilateral()
 {
     Assert.That(Selection.Solution.TriangleClassification(10,10,10), Is.EqualTo("The triangle is equilateral."));
 }
 
 [Test]
-public void TriangleClassificationIsosceles()
+public Test_void TriangleClassificationIsosceles()
 {
     Assert.That(Selection.Solution.TriangleClassification(10,5,10), Is.EqualTo("The triangle is isosceles."));
 }
 
 [Test]
-public void TriangleClassificationScalene()
+public Test_void TriangleClassificationScalene()
 {
     Assert.That(Selection.Solution.TriangleClassification(10,5,8), Is.EqualTo("The triangle is scalene."));
 }
